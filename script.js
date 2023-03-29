@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const btnSquares = document.querySelector('.btnSquares');
+const btnClear = document.querySelector('.btnClear');
 
 //sets the default number of squares to 50, before the user changes the number
 let j = 0;
@@ -8,6 +9,7 @@ while (j < 25 * 25) {
     const div = document.createElement('div');
     div.style.width = "4%";
     div.style.height = "4%";
+    div.classList.add('squares');
     //add the event listener that changes the color on mouseenter
     div.addEventListener('mouseenter', function changeToBlack(e) {
         e.target.style.backgroundColor = 'black';
@@ -32,9 +34,12 @@ btnSquares.addEventListener("click", function changeNumberOfSquares() {
         while (i < number * number) {
             //create the div
             const div = document.createElement('div');
-            //add the event listener that changes the color on mouseenter
+            //Adjust width and eight based on user choice
             div.style.width = `${100 / number}%`;
             div.style.height = `${100 / number}%`;
+            //add class
+            div.classList.add('squares');
+            //add the event listener that changes the color on mouseenter
             div.addEventListener('mouseenter', function changeToBlack(e) {
                 e.target.style.backgroundColor = 'black';
             });
@@ -45,6 +50,14 @@ btnSquares.addEventListener("click", function changeNumberOfSquares() {
     }
 
 });
+
+//CLEAR BUTTON
+btnClear.addEventListener('click', function clear() {
+    const divs = document.querySelectorAll('.squares');
+    divs.forEach(element => {
+        element.style.backgroundColor = 'white';
+    });
+})
 
 
 

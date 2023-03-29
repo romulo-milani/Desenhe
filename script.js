@@ -3,12 +3,11 @@ const btnSquares = document.querySelector('.btnSquares');
 
 //sets the default number of squares to 50, before the user changes the number
 let j = 0;
-while (j < 100) {
+while (j < 25 * 25) {
     //create the div
     const div = document.createElement('div');
-    //delete the line below
-    div.classList.add('squares');
-    //delete the line above
+    div.style.width = "4%";
+    div.style.height = "4%";
     //add the event listener that changes the color on mouseenter
     div.addEventListener('mouseenter', function changeToBlack(e) {
         e.target.style.backgroundColor = 'black';
@@ -19,24 +18,23 @@ while (j < 100) {
 }
 
 //button to change the number of squares
-btnSquares.addEventListener("click", function changeNumberOfSquares () {
-    const number = window.prompt("Digite o número desejado de quadrados por lado (máximo de 100):");
-    if (number > 100) {
+btnSquares.addEventListener("click", function changeNumberOfSquares() {
+    const number = window.prompt("Digite o número desejado de quadrados por lado (máximo de 50):");
+    if (number > 50) {
         alert("O número de quadrados deve ser igual ou menor do que 100!");
         return;
     } else {
-        while(container.firstChild) {
+        while (container.firstChild) {
             container.firstChild.remove();
         }
         //adds the amount of squares the user wants
         let i = 0;
-        while (i < number) {
+        while (i < number * number) {
             //create the div
             const div = document.createElement('div');
-            //delete the line below
-            div.classList.add('squares');
-            //delete the line above
             //add the event listener that changes the color on mouseenter
+            div.style.width = `${100 / number}%`;
+            div.style.height = `${100 / number}%`;
             div.addEventListener('mouseenter', function changeToBlack(e) {
                 e.target.style.backgroundColor = 'black';
             });
@@ -45,7 +43,7 @@ btnSquares.addEventListener("click", function changeNumberOfSquares () {
             i++;
         }
     }
-       
+
 });
 
 

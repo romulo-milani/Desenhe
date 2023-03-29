@@ -27,17 +27,14 @@ main {
 }
 
 .container {
-    width: 400px;
-    height: 400px;
+    width: 60vh;
+    height: 60vh;
     display: flex;
     flex-wrap: wrap;
-    background-color: gold;
-}
-
-.squares {
-    width: 10px;
-    height: 10px;
-    border: 1px black solid;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0px;
+    border: 2px solid black;
 }
 
 footer {

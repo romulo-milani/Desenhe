@@ -1,7 +1,10 @@
 const container = document.querySelector('.container');
 let i = 0;
-while (i < 10) {
-    container.appendChild(document.createElement('div'));   
+let div;
+while (i < 256) {
+    const div = document.createElement('div');
+    div.classList.add('squares');
+    container.appendChild(div);   
     i++; 
 }
 

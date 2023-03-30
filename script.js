@@ -10,9 +10,14 @@ while (j < 25 * 25) {
     div.style.width = "4%";
     div.style.height = "4%";
     div.classList.add('squares');
+
+    //generate a random color
+    const red = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
     //add the event listener that changes the color on mouseenter
     div.addEventListener('mouseenter', function changeToBlack(e) {
-        e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     });
     //append the div to the container
     container.appendChild(div);
@@ -39,9 +44,15 @@ btnSquares.addEventListener("click", function changeNumberOfSquares() {
             div.style.height = `${100 / number}%`;
             //add class
             div.classList.add('squares');
+
+            //generate a random color for each div
+            const red = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+
             //add the event listener that changes the color on mouseenter
             div.addEventListener('mouseenter', function changeToBlack(e) {
-                e.target.style.backgroundColor = 'black';
+                e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
             });
             //append the div to the container
             container.appendChild(div);

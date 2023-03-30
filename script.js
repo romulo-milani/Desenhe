@@ -28,7 +28,7 @@ while (j < 25 * 25) {
 btnSquares.addEventListener("click", function changeNumberOfSquares() {
     const number = window.prompt("Digite o número desejado de quadrados por lado (máximo de 50):");
     if (number > 50) {
-        alert("O número de quadrados deve ser igual ou menor do que 100!");
+        alert("O número de quadrados deve ser igual ou menor do que 50!");
         return;
     } else {
         while (container.firstChild) {
